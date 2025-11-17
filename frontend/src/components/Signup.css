@@ -1,0 +1,125 @@
+/* Container styling */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Form styling */
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    width: 450px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    color: #333;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Input container styling */
+.username,
+.email,
+.password,
+.conpassword{
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #111827;
+}
+
+/* Inputs (including confirm password) */
+.username input,
+.email input,
+.password input,
+.conpassword input{
+    padding: 14px 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    background: #ffffff;
+    color: #111;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Placeholder */
+.username input::placeholder,
+.email input::placeholder,
+.password input::placeholder,
+.conpassword input::placeholder {
+    color: #9ca3af;
+}
+
+/* Focus effect */
+.username input:focus,
+.email input:focus,
+.password input:focus,
+.conpassword input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+/* Login text section */
+.login {
+    text-align: center;
+    margin-top: 5px;
+    color: #444;
+    border: none !important;
+    outline: none !important;
+}
+
+.login p {
+    border: none;
+    outline: none;
+}
+
+/* Login link */
+.login a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    border: none !important;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+.button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #6366f1;
+    color: #fff;
+    transition: 0.25s ease;
+}
+
+/* Button hover */
+.button:hover {
+    background: #4f46e5;
+    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+}

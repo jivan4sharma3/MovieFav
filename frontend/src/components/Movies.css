@@ -1,0 +1,160 @@
+/* ----------- PAGE LAYOUT ----------- */
+.movie-container {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 30px 20px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ----------- MOVIE CARD ----------- */
+/* ----------- MOVIE CARD (WHITE WITH SHADOW) ----------- */
+.movieCard {
+  width: 200px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.movieCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.moviePoster {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.movieInfo {
+  padding: 12px;
+  text-align: left;
+}
+
+.movieInfo h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111;
+}
+
+.movieInfo p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ----------- ADD MOVIE SECTION ----------- */
+.add-container {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-container h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+/* Add Movie Button */
+.openBtn {
+  padding: 12px 22px;
+  background: #2b8a3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.openBtn:hover {
+  background: #4cc464;
+}
+
+/* ----------- POPUP OVERLAY ----------- */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  z-index: 1000;
+}
+
+/* ----------- POPUP CONTAINER ----------- */
+.popupContainer {
+  width: 400px;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  position: relative;
+  animation: popupScale 0.3s ease;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+/* Close button */
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ----------- FORM INSIDE POPUP ----------- */
+.popupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.popupForm label {
+  font-weight: bold;
+}
+
+.popupForm input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.submitBtn {
+  padding: 12px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submitBtn:hover {
+  background: #0d7a0d;
+}
+
+/* ----------- ANIMATIONS ----------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popupScale {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
