@@ -19,7 +19,7 @@ const Movies = () => {
     const moviename = useRef(null)
     const release = useRef(null)
 
-    const [moiveList, setMovieList] = useState([])
+    const [moiveList, setMovieList] = useState()
 
 
     const addMovies = () => {
@@ -27,18 +27,23 @@ const Movies = () => {
             alert("Add Movies Details")
         } else {
             let allMovies = moiveList
-            allMovies.push({
+            allMovies.push([{
                 poster: URL.createObjectURL(poster.current.files[0]),
                 name: moviename.current.value,
                 release: release.current.value,
-            })
+            },])
             setMovieList([...allMovies])
             setOpen(false)
             axios.get(`http://localhost:5000/movies?userid=${id}&poster=${URL.createObjectURL(poster.current.files[0])}&name=${moviename.current.value}&release=${release.current.value}`).then((res) => {
                 if (id === res.data.userid) {
-                    setMovieList(res.data)
-                } else {
-                    alert("Movie is add")
+                    let allMovies = moiveList
+                    allMovies.push(res.data)
+                    console.log(allMovies)
+                    setMovieList([...allMovies])
+                    console.log(moiveList)
+                    // moiveList.push(res.data)
+                    // setMovieList
+
                 }
             })
         }
@@ -58,7 +63,7 @@ const Movies = () => {
             <div className='movie-container'>
 
                 {
-                    moiveList.map((items,index) => {
+                    moiveList.map((items, index) => {
                         return (
                             <div className="movieCard" key={index}>
                                 <img src={items.poster} className="moviePoster" />
@@ -66,7 +71,7 @@ const Movies = () => {
                                 <div className="movieInfo">
                                     <h3>{items.name}</h3>
                                     <p>{items.release}</p>
-                                </div> 
+                                </div>
                             </div>
                         )
                     })

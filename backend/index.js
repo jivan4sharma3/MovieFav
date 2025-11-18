@@ -55,19 +55,22 @@ app.get('/login', (req, res) => {
 // })
 
 app.get('/movies', (req, res) => {
-  let userFound = false;
+  let userFound = false
 
+  movies.push(req.query)
+  console.log(movies)
+  console.log("user added the movies")
   for (let i = 0; i < users.length; i++) {
     if (users[i].name === req.query.userid) {
-      movies.push(req.query)
+      res.send(movies)
       console.log(movies)
-      console.log("user added the movies")
-      userFound = true
-      break;  // stop the loop once user is found
     }
+    // if (userFound) {
+    //   res.send(movies)  // send response only once
+    // } else {
+    //   res.status(404).send({ message: "User not found" })
+    // }
   }
-
-  console.log(req.query)
 
   if (userFound) {
     res.send(movies)  // send response only once
